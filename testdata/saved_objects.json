@@ -1,0 +1,81 @@
+{
+    "docs": [
+        {
+            "_id": "postroom.dashboard.rvdhoststatus",
+            "_index": ".kibana",
+            "_source": {
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+                },
+                "panelsJSON": "[{\"id\":\"postroom.rvdhoststatus.messages.sent\",\"type\":\"visualization\",\"size_x\":3,\"size_y\":2,\"col\":1,\"row\":1},{\"id\":\"postroom.rvdhoststatus.packetsmissed\",\"type\":\"visualization\",\"size_x\":3,\"size_y\":2,\"col\":4,\"row\":1}]",
+                "timeFrom": "now-4h",
+                "timeRestore": true,
+                "timeTo": "now",
+                "title": "postroom.dashboard.rvdhoststatus",
+                "version": 1
+            },
+            "_type": "dashboard",
+            "_version": 1,
+            "found": true
+        },
+        {
+            "_id": "postroom.rvdhoststatus",
+            "_index": ".kibana",
+            "_source": {
+                "columns": [
+                    "_source"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"index\":\"logstash-*\",\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[],\"query\":{\"query_string\":{\"query\":\"MetricType: \\\"RvdHostStatus\\\"\",\"analyze_wildcard\":true}}}"
+                },
+                "sort": [
+                    "@timestamp",
+                    "desc"
+                ],
+                "title": "postroom.rvdhoststatus",
+                "version": 1
+            },
+            "_type": "search",
+            "_version": 1,
+            "found": true
+        },
+        {
+            "_id": "postroom.rvdhoststatus.messages.sent",
+            "_index": ".kibana",
+            "_source": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\":[]}"
+                },
+                "savedSearchId": "postroom.rvdhoststatus",
+                "title": "postroom.rvdhoststatus.messages.sent",
+                "version": 1,
+                "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"MessagesSent\",\"percents\":[99]}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}"
+            },
+            "_type": "visualization",
+            "_version": 1,
+            "found": true
+        },
+        {
+            "_id": "postroom.rvdhoststatus.packetsmissed",
+            "_index": ".kibana",
+            "_source": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\":[]}"
+                },
+                "savedSearchId": "postroom.rvdhoststatus",
+                "title": "postroom.rvdhoststatus.packetsmissed",
+                "version": 1,
+                "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"PacketsMissed\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}"
+            },
+            "_type": "visualization",
+            "_version": 1,
+            "found": true
+        }
+    ]
+}
