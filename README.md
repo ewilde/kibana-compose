@@ -1,7 +1,7 @@
 # kibana-compose
 
-Developing Terraform
---------------------
+Developing kibana-compose
+-------------------------
 
 To compile a development version of kibana-compose run `make dev`. This will put the kibana-compose binary in the `bin` and `$GOPATH/bin` folder:
 
